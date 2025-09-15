@@ -5,11 +5,11 @@ public class Product {
     private double price;
 
 
-    public Product (String name, double price){
-        if (name == null || name.trim().isEmpty()){
+    public Product(String name, double price) {
+        if (name == null || name.trim().isEmpty()) {
             throw new IllegalArgumentException("The procduct's name is not valid.");
         }
-        if (price <= 0){
+        if (price <= 0) {
             throw new IllegalArgumentException("The product's price is not valid.");
         }
         this.name = name;

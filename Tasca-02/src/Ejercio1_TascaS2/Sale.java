@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Sale {
     private final List<Product> list_products;
-    private double final_price;
+    private double final_price = 0.0;
 
 
     public Sale(double final_price) {
@@ -28,10 +28,14 @@ public class Sale {
         }
         double totalPrice = 0.0;
         int i = 0;
-        for (Product:list_products) {
-            totalPrice += Product.getPrice();
+        for (Product product :list_products) {
+            totalPrice += product.getPrice();
 
         }
+
+
+    public void addProducts(Product product){
+        list_products.add(product)
     }
 
 
