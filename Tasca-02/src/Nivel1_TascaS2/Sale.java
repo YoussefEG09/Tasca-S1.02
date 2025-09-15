@@ -1,4 +1,4 @@
-package Ejercio1_TascaS2;
+package Nivel1_TascaS2;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,4 +38,11 @@ public class Sale {
     }
 
 
+    @Override
+    public String toString() {
+        return "Sale{" +
+                "list_products=" + list_products +
+                ", final_price=" + final_price +
+                '}';
+    }
 }

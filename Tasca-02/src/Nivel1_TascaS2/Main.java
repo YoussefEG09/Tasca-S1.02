@@ -1,4 +1,4 @@
-package Ejercio1_TascaS2;
+package Nivel1_TascaS2;
 
 public class Main {
     public static void main(String[] args) {

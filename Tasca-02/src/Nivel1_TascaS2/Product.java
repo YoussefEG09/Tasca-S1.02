@@ -1,4 +1,4 @@
-package Ejercio1_TascaS2;
+package Nivel1_TascaS2;
 
 public class Product {
     private String name;
@@ -24,5 +24,13 @@ public class Product {
 
     public double getPrice() {
         return price;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                '}';
     }
 }
