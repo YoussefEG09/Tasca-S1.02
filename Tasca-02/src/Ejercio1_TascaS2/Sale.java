@@ -20,7 +20,7 @@ public class Sale {
         return final_price;
     }
 
-    public double CalculateTotal() throws SaleEmptyException {
+    public double calculateTotal() throws SaleEmptyException {
         if (list_products.isEmpty()) {
             throw new SaleEmptyException();
         }
