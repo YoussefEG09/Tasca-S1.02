@@ -8,9 +8,7 @@ public class Sale {
     private double final_price = 0.0;
 
 
-    public Sale(double final_price) {
-        this.final_price = final_price;
-
+    public Sale() {
         this.list_products = new ArrayList<>();
     }
 
@@ -22,20 +20,21 @@ public class Sale {
         return final_price;
     }
 
-    public double Calculate_Total() {
+    public double CalculateTotal() throws SaleEmptyException {
         if (list_products.isEmpty()) {
-            throw new SaleEmptyException("To make a sale, you first need to add products.");
+            throw new SaleEmptyException();
         }
         double totalPrice = 0.0;
-        int i = 0;
-        for (Product product :list_products) {
+        for (Product product : list_products) {
             totalPrice += product.getPrice();
-
         }
+        this.final_price = totalPrice;
+        return totalPrice;
+    }
 
 
-    public void addProducts(Product product){
-        list_products.add(product)
+    public void addProduct(Product product) {
+        list_products.add(product);
     }
 
 
