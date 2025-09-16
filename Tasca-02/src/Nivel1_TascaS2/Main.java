@@ -26,7 +26,7 @@ public class Main {
             sale.addProduct(new Product("chocolate", 1.95));
             sale.addProduct(new Product("cookie" , 1.30));
             System.out.println("Total price : " + sale.calculateTotal());
-            Product p = sale.getList_products().get(5);
+            Product p = sale.getList_products().get(1);
         }   catch (IndexOutOfBoundsException e){
             System.out.println(e.getMessage());
         } catch (SaleEmptyException e){

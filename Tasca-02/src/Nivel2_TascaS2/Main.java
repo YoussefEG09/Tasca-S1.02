@@ -10,7 +10,7 @@ public class Main {
 
                     char initial = Entry.scanChar("Enter the initial of your name");
                     String name = Entry.scanString("Enter your full name");
-                    boolean answer = Entry.scanBoolean("Do you want to continue? (s/n)");
+                    boolean answer = Entry.scanBoolean("Do you want to continue? (y/n)");
 
                     System.out.println("\nEntered data:");
                     System.out.println("Age: " + age);

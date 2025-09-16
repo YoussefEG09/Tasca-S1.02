@@ -86,59 +86,65 @@ public class Entry {
 
         while (!valid) {
             System.out.println((message + " : "));
-            String input = scanner.nextLine();
-
-            if (input.length() != 1) {
-                throw new FormatErrorException();
-            } else {
-                value = input.charAt(0);
-                valid = true;
-            }
-        }
-
-        return value;
-
-    }
-
-    public static String scanString(String message) throws FormatErrorException {
-
-        String value = " ";
-        boolean valid = false;
-
-        while (!valid) {
-            System.out.println(message + " : ");
-            String input = scanner.nextLine();
-
-            if (input.isEmpty()) {
-                throw new FormatErrorException();
-            } else {
-                value = input;
-                valid = true;
-            }
-
-
-        }
-        return value;
-    }
-
-    public static boolean scanBoolean(String message) throws FormatErrorException {
-        boolean valid = false;
-        boolean value = false;
-
-        while (!valid) {
-            System.out.println(message + " : ");
             String input = scanner.next();
 
-            if (input.equalsIgnoreCase("y")) {
-                value = true;
-                valid = true;
-            } else if (input.equalsIgnoreCase("n")) {
-                value = true;
-                valid = true;
-            } else {
-                throw new FormatErrorException();
+            try {
+                if (input.length() != 1) {
+                    throw new FormatErrorException();
+                } else {
+                    value = input.charAt(0);
+                    valid = true;
+                }
+                scanner.nextLine();
+                } catch(FormatErrorException e){
+                    System.out.println(e.getMessage());
+                    scanner.nextLine();
+                }
             }
+
+            return value;
+
         }
-        return value;
+
+        public static String scanString (String message) throws FormatErrorException {
+
+            String value = " ";
+            boolean valid = false;
+
+            while (!valid) {
+                System.out.println(message + " : ");
+                String input = scanner.nextLine();
+
+                if (input.isEmpty()) {
+                    throw new FormatErrorException();
+                } else {
+                    value = input;
+                    valid = true;
+                }
+
+
+            }
+            return value;
+        }
+
+        public static boolean scanBoolean (String message) throws FormatErrorException {
+            boolean valid = false;
+            boolean value = false;
+
+            while (!valid) {
+                System.out.println(message + " : ");
+                String input = scanner.next();
+
+                if (input.equalsIgnoreCase("y")) {
+                    value = true;
+                    valid = true;
+                } else if (input.equalsIgnoreCase("n")) {
+                    value = true;
+                    valid = true;
+                } else {
+                    throw new FormatErrorException();
+                }
+            }
+            return value;
+        }
     }
-}
