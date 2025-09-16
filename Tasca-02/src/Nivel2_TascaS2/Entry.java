@@ -1,11 +1,12 @@
 package Nivel2_TascaS2;
 
 import java.util.InputMismatchException;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Entry {
 
-    private static Scanner scanner = new Scanner(System.in);
+    private static Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
 
 
     public static byte scanByte(String message) {
@@ -128,7 +129,7 @@ public class Entry {
             System.out.println(message + " : ");
             String input = scanner.next();
 
-            if (input.equalsIgnoreCase("s")) {
+            if (input.equalsIgnoreCase("y")) {
                 value = true;
                 valid = true;
             } else if (input.equalsIgnoreCase("n")) {

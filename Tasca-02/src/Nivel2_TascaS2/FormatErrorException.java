@@ -4,4 +4,5 @@ public class FormatErrorException extends Exception{
     public FormatErrorException(){
         super("You used the wrong format.");
     }
+
 }
