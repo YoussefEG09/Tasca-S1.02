@@ -85,7 +85,7 @@ public class Entry {
 
         while (!valid) {
             System.out.println((message + " : "));
-            String input = scanner.next();
+            String input = scanner.nextLine();
 
             if (input.length() != 1) {
                 throw new FormatErrorException();
@@ -106,19 +106,38 @@ public class Entry {
 
         while (!valid) {
             System.out.println(message + " : ");
-            String input = scanner.next();
+            String input = scanner.nextLine();
 
             if (input.isEmpty()) {
                 throw new FormatErrorException();
+            } else {
+                value = input;
+                valid = true;
             }
-        }
 
+
+        }
         return value;
     }
 
-}
+    public static boolean scanBoolean(String message) throws FormatErrorException {
+        boolean valid = false;
+        boolean value = false;
 
-public static boolean scanBoolean(String message) throws FormatErrorException {
+        while (!valid) {
+            System.out.println(message + " : ");
+            String input = scanner.next();
 
-}
+            if (input.equalsIgnoreCase("s")) {
+                value = true;
+                valid = true;
+            } else if (input.equalsIgnoreCase("n")) {
+                value = true;
+                valid = true;
+            } else {
+                throw new FormatErrorException();
+            }
+        }
+        return value;
+    }
 }
